@@ -39,7 +39,15 @@ au BufNewFile *.xml 0r ~/.vim/templates/skeleton.xml
 au BufNewFile *.html 0r ~/.vim/templates/skeleton.html
 
 " Uncomment line below to enable plugins below
-" execute pathogen#infect()
+execute pathogen#infect()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Dispatch
+" autocmd FileType sln let b:dispatch = 'MSBuild.exe %'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree - uncomment line below to enable syntax checking
+" cmap ntree :NERDTree<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic - uncomment line below to enable syntax checking
