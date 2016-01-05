@@ -1,8 +1,35 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins (managed by Vundle)
+"
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" Formatting & color
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-dispatch'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neoinclude.vim'
+Plugin 'justmao945/vim-clang'
+"Plugin 'Rip-Rip/clang_complete'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
 syntax on
 filetype plugin indent on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Formatting, etc 
+"
 set number
 
 set nocompatible
@@ -25,41 +52,27 @@ set smarttab        " When on, a <Tab> in front of a line inserts blanks
 set omnifunc=syntaxcomplete#Complete
 
 " Key remap settings
-inoremap jj <esc>
-inoremap <C-n> :bnext<CR>
-inoremap <C-p> :bprevious<CR>
+imap jj <esc>
+imap <C-n> :bnext<CR>
+imap <C-p> :bprevious<CR>
+
+cmap ntree :NERDTree<CR>
 
 " Commands
 command Thtml :%!tidy -q -i --indent-spaces 3 --show-errors 0
 command Txml :%!tidy -xml -q -i --indent-spaces 3 --show-errors 0
 
-
 " Templates
 au BufNewFile *.xml 0r ~/.vim/templates/skeleton.xml
 au BufNewFile *.html 0r ~/.vim/templates/skeleton.html
 
-" Uncomment line below to enable plugins below
-execute pathogen#infect()
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Dispatch
-" autocmd FileType sln let b:dispatch = 'MSBuild.exe %'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTree - uncomment line below to enable syntax checking
-" cmap ntree :NERDTree<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic - uncomment line below to enable syntax checking
-" Need to have Syntastic installed in ~/.vim/bundle directory
-" source ~/.vim/conf/.vimrc_syntastic
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NeoComplete - uncomment line below to enable type as you go completion
-" Need to have NeoComplete installed in ~/.vim/bundle directory
-" source ~/.vim/conf/.vimrc_neocomplete
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Omnisharp - uncomment line below to enable OmniSharp c# VIM IDE
-" Need to have Omnisharp installed in ~/.vim/bundle directory
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Per-plugin configs
+"
+source ~/.vim/conf/.vimrc_neocomplete
+source ~/.vim/conf/.vimrc_syntastic
+source ~/.vim/conf/.vimrc_vim_clang
 " source ~/.vim/conf/.vimrc_omnisharp
+
+
+
