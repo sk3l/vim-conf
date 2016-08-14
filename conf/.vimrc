@@ -48,6 +48,13 @@ set shiftwidth=3    " Number of spaces to use for each step of (auto)indent.
 set expandtab       " Use the appropriate number of spaces to insert a <Tab>.
 set smarttab        " When on, a <Tab> in front of a line inserts blanks
 
+" Status line
+:set statusline=%f         " Path to the file
+:set statusline+=\ -\      " Separator
+:set statusline+=file-type: " Label
+:set statusline+=%y        " Filetype of the file
+:set statusline+=%=        " Switch to the right side
+:set statusline+=colno:\ %-4c\ lineno:\ %-4l\ linecnt:\ %-4L " Line info
 
 set omnifunc=syntaxcomplete#Complete
 
