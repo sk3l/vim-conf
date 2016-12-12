@@ -19,6 +19,7 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neoinclude.vim'
 Plugin 'justmao945/vim-clang'
+Plugin 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
 "Plugin 'Rip-Rip/clang_complete'
 
 " All of your Plugins must be added before the following line
@@ -49,12 +50,17 @@ set expandtab       " Use the appropriate number of spaces to insert a <Tab>.
 set smarttab        " When on, a <Tab> in front of a line inserts blanks
 
 " Status line
-:set statusline=%f         " Path to the file
-:set statusline+=\ -\      " Separator
-:set statusline+=file-type: " Label
-:set statusline+=%y        " Filetype of the file
-:set statusline+=%=        " Switch to the right side
-:set statusline+=colno:\ %-4c\ lineno:\ %-4l\ linecnt:\ %-4L " Line info
+set laststatus=2
+set statusline=%f         " Path to the file
+set statusline+=\ -\      " Separator
+set statusline+=file-type: " Label
+set statusline+=%y        " Filetype of the file
+set statusline+=%=        " Switch to the right side
+set statusline+=colno:\ %-4c\ lineno:\ %-4l\ linecnt:\ %-4L " Line info
+
+" Custom colors
+hi StatusLine cterm=bold ctermfg=51 ctermbg=darkgray
+hi IncSearch cterm=bold ctermfg=darkred ctermbg=NONE
 
 set omnifunc=syntaxcomplete#Complete
 
@@ -63,11 +69,11 @@ imap jj <esc>
 imap <C-n> :bnext<CR>
 imap <C-p> :bprevious<CR>
 
-cmap ntree :NERDTree<CR>
+cmap vnt   :NERDTree<CR>
 
 " Commands
-command Thtml :%!tidy -q -i --indent-spaces 3 --show-errors 0
-command Txml :%!tidy -xml -q -i --indent-spaces 3 --show-errors 0
+command Thtml  :%!tidy -q -i --indent-spaces 3 --show-errors 0
+command Txml   :%!tidy -xml -q -i --indent-spaces 3 --show-errors 0
 
 " Templates
 au BufNewFile *.xml 0r ~/.vim/templates/skeleton.xml
@@ -79,7 +85,5 @@ au BufNewFile *.html 0r ~/.vim/templates/skeleton.html
 source ~/.vim/conf/.vimrc_neocomplete
 source ~/.vim/conf/.vimrc_syntastic
 source ~/.vim/conf/.vimrc_vim_clang
-" source ~/.vim/conf/.vimrc_omnisharp
-
-
+"source ~/.vim/conf/.vimrc_omnisharp
 
