@@ -12,15 +12,11 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-dispatch'
+Plugin 'justmao945/vim-clang'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neoinclude.vim'
-Plugin 'justmao945/vim-clang'
-Plugin 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
-"Plugin 'Rip-Rip/clang_complete'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,8 +62,6 @@ set omnifunc=syntaxcomplete#Complete
 
 " Key remap settings
 imap jj <esc>
-imap <C-n> :bnext<CR>
-imap <C-p> :bprevious<CR>
 
 cmap vnt   :NERDTree<CR>
 
@@ -85,5 +79,3 @@ au BufNewFile *.html 0r ~/.vim/templates/skeleton.html
 source ~/.vim/conf/.vimrc_neocomplete
 source ~/.vim/conf/.vimrc_syntastic
 source ~/.vim/conf/.vimrc_vim_clang
-"source ~/.vim/conf/.vimrc_omnisharp
-
