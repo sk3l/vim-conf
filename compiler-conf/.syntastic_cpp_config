@@ -1,0 +1,17 @@
+-I/usr/include/c++/6
+-I/usr/include/x86_64-linux-gnu/c++/6
+
+-I/home/mskelton/Code/sk3l/repos/sk3l3tal/src
+-I/home/mskelton/Code/sk3l/repos/sk3l3tal/src/app
+-I/home/mskelton/Code/sk3l/repos/sk3l3tal/src/app/parameters
+-I/home/mskelton/Code/sk3l/repos/sk3l3tal/src/concurrent
+-I/home/mskelton/Code/sk3l/repos/sk3l3tal/src/core
+-I/home/mskelton/Code/sk3l/repos/sk3l3tal/src/core/datetime
+-I/home/mskelton/Code/sk3l/repos/sk3l3tal/src/core/io
+-I/home/mskelton/Code/sk3l/repos/sk3l3tal/src/core/text
+-I/home/mskelton/Code/sk3l/repos/sk3l3tal/src/data
+-I/home/mskelton/Code/sk3l/repos/sk3l3tal/src/data/adt
+-I/home/mskelton/Code/sk3l/repos/sk3l3tal/src/data/xchange/xml
+-I/home/mskelton/Code/sk3l/repos/sk3l3tal/src/net
+-I/home/mskelton/Code/sk3l/repos/sk3l3tal/src/net/tcp
+
