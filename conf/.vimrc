@@ -78,5 +78,5 @@ au BufNewFile *.html 0r ~/.vim/templates/skeleton.html
 "
 source ~/.vim/conf/.vimrc_neocomplete
 source ~/.vim/conf/.vimrc_syntastic
-source ~/.vim/conf/.vimrc_vim_clang
+"source ~/.vim/conf/.vimrc_vim_clang
 source ~/.vim/conf/.vimrc_nerdtree
