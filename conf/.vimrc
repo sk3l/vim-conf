@@ -17,6 +17,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'justmao945/vim-clang'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neoinclude.vim'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
+Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -40,8 +42,8 @@ set noswapfile
 
 " Tab settings
 "set backspace=3
-set tabstop=3       " Number of spaces that a <Tab> in the file counts for.
-set shiftwidth=3    " Number of spaces to use for each step of (auto)indent.
+set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
+set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
 set expandtab       " Use the appropriate number of spaces to insert a <Tab>.
 set smarttab        " When on, a <Tab> in front of a line inserts blanks
 
@@ -57,8 +59,13 @@ set statusline+=colno:\ %-4c\ lineno:\ %-4l\ linecnt:\ %-4L " Line info
 " Custom colors
 hi StatusLine cterm=bold ctermfg=51 ctermbg=darkgray
 hi IncSearch cterm=bold ctermfg=darkred ctermbg=NONE
+hi clear SpellBad
+hi SpellBad cterm=underline ctermfg=grey ctermbg=darkred
 
 set omnifunc=syntaxcomplete#Complete
+
+" Clipboard
+set clipboard+=unnamedplus
 
 " Key remap settings
 imap jj <esc>
@@ -66,8 +73,8 @@ imap jj <esc>
 cmap vnt   :NERDTree<CR>
 
 " Commands
-command Thtml  :%!tidy -q -i --indent-spaces 3 --show-errors 0
-command Txml   :%!tidy -xml -q -i --indent-spaces 3 --show-errors 0
+command Thtml  :%!tidy -q -i --indent-spaces 4 --show-errors 0
+command Txml   :%!tidy -xml -q -i --indent-spaces 4 --show-errors 0
 
 " Templates
 au BufNewFile *.xml 0r ~/.vim/templates/skeleton.xml
