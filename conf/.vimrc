@@ -20,6 +20,7 @@ Plugin 'Shougo/neoinclude.vim'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'nvie/vim-flake8'
+Plugin 'Chiel92/vim-autoformat'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
