@@ -36,9 +36,9 @@ set nocompatible
 colorscheme gentooish
 
 " Backup file settings
-set nobackup       
-set nowritebackup  
-set noswapfile  
+set nobackup
+set nowritebackup
+set noswapfile
 
 " Tab settings
 "set backspace=3
