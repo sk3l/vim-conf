@@ -75,6 +75,7 @@ cmap vnt   :NERDTree<CR>
 " Commands
 command Thtml  :%!tidy -q -i --indent-spaces 4 --show-errors 0
 command Txml   :%!tidy -xml -q -i --indent-spaces 4 --show-errors 0
+command Tjson  :%!jq --indent 4 .
 
 " Templates
 au BufNewFile *.xml 0r ~/.vim/templates/skeleton.xml
