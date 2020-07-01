@@ -1,17 +1,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Deoplete 
+" ALE 
 let g:ale_completion_enabled = 1
-let g:deoplete#enable_at_startup = 1
 
-" Use ALE with deoplete 
-"call deoplete#custom#option('sources', {
-"\ '_': ['ale'],
-"\})
+let g:ale_cpp_gcc_options="-std=c++11 -Wall"
+let g:ale_cpp_clang_options=" -std=c++11 -Wall --sysroot=/opt/rh/devtoolset-8/root/usr"
+let g:ale_cpp_clangd_options="--resource-dir=/opt/rh/llvm-toolset-7.0/root/usr/lib64/clang/7.0.1/"
 
 set omnifunc=ale#completion#OmniFunc
-
-" " Jedi
-" Disable autocompletion (using deoplete instead)
-let g:jedi#completions_enabled = 0
-let g:deoplete#sources#jedi#python_path = 'python3'
-
+let g:ale_linters = {
+\   'cpp': ['clang', 'clangcheck', 'clangd', 'gcc'],
+\}
