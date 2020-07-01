@@ -1,18 +1,24 @@
-# Set CMake project properties 
-project(sk3l3tal)
-cmake_minimum_required(VERSION 2.8)
+# Set CMake project properties
+project(testcpp)
+cmake_minimum_required(VERSION 3.0)
 
 # Set CPP compiler flags
-set(CMAKE_CXX_FLAGS 
-${CMAKE_CXX_FLAGS} 
+set(CMAKE_CXX_FLAGS
+${CMAKE_CXX_FLAGS}
 "-Wall -pedantic -D_GLIBCXX_CONCEPT_CHECKS -std=gnu++14 -pthread")
 
 # CMake package searches go here
 #find_package (Threads)
 
 # CMake variable defs go here
-set(SOURCES)
-set(INCLUDES)
+set(TGTNAME testcpp)
+set(SRCFILES)
+set(INCFILES)
+
+set(
+   SRCFILES
+   ${PROJECT_SOURCE_DIR}/main.cpp
+)
 
 #set(LIBNAME ${PROJECT_NAME})
 #set(LIBNAME_S "${PROJECT_NAME}_s")
@@ -35,7 +41,7 @@ set(INCLUDES)
 #add_library(${LIBNAME} SHARED ${SOURCES} ${INCLUDES})
 
 # Declare CMake project as a //executable//
-#add_executable(${NAME} ${SRCFILES}) 
+add_executable(${TGTNAME} ${SRCFILES})
 #target_link_libraries(${NAME} sk3l3tal)
 
 ### install targets ###
