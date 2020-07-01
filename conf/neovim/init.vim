@@ -23,9 +23,11 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'nvie/vim-flake8'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'deoplete-plugins/deoplete-jedi'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'Shougo/deoplete-clangx'
+"Plugin 'deoplete-plugins/deoplete-jedi'
+Plugin 'fatih/vim-go'
+"Plugin 'Shougo/deoplete.nvim'
+"Plugin 'Shougo/deoplete-clangx'
+Plugin 'Shougo/neoinclude.vim'
 Plugin 'dense-analysis/ale'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -87,9 +89,14 @@ command Txml   :%!tidy -xml -q -i --indent-spaces 4 --show-errors 0
 au BufNewFile *.xml 0r ~/.vim/templates/skeleton.xml
 au BufNewFile *.html 0r ~/.vim/templates/skeleton.html
 
+:set guicursor=
+" Workaround some broken plugins which set guicursor indiscriminately.
+:autocmd OptionSet guicursor noautocmd set guicursor=
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Per-plugin configs
 "
 source ~/.vim/conf/.vimrc_nerdtree
+source ~/.vim/conf/.vimrc_ale
 "source ~/.vim/conf/.vimrc_vim_flake8
-source ~/.vim/conf/.vimrc_deoplete
+"source ~/.vim/conf/.vimrc_deoplete
