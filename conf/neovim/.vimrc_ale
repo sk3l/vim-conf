@@ -3,10 +3,12 @@
 let g:ale_completion_enabled = 1
 
 let g:ale_cpp_gcc_options="-std=c++11 -Wall"
-let g:ale_cpp_clang_options=" -std=c++11 -Wall --sysroot=/opt/rh/devtoolset-8/root/usr"
-let g:ale_cpp_clangd_options="--resource-dir=/opt/rh/llvm-toolset-7.0/root/usr/lib64/clang/7.0.1/"
+let g:ale_cpp_clang_options=" -std=c++11 -Wall"
+let g:ale_cpp_clangd_options=""
 
 set omnifunc=ale#completion#OmniFunc
+
 let g:ale_linters = {
 \   'cpp': ['clang', 'clangcheck', 'clangd', 'gcc'],
+\   'python': ['flake8', 'pylint', 'pyls'],
 \}

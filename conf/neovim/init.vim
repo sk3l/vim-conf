@@ -20,14 +20,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'nvie/vim-flake8'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'davidhalter/jedi-vim'
-"Plugin 'deoplete-plugins/deoplete-jedi'
 Plugin 'fatih/vim-go'
-"Plugin 'Shougo/deoplete.nvim'
-"Plugin 'Shougo/deoplete-clangx'
-Plugin 'Shougo/neoinclude.vim'
 Plugin 'dense-analysis/ale'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -78,7 +72,7 @@ set clipboard+=unnamedplus
 
 " Key remap settings
 imap jj <esc>
-
+imap cc <C-X><C-O>
 cmap vnt   :NERDTree<CR>
 
 " Commands
@@ -98,5 +92,3 @@ au BufNewFile *.html 0r ~/.vim/templates/skeleton.html
 "
 source ~/.vim/conf/.vimrc_nerdtree
 source ~/.vim/conf/.vimrc_ale
-"source ~/.vim/conf/.vimrc_vim_flake8
-"source ~/.vim/conf/.vimrc_deoplete
