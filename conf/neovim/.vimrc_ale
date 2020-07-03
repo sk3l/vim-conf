@@ -1,9 +1,21 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ALE 
-let g:ale_completion_enabled = 1
+" ALE
+let g:ale_completion_enabled=1
 
-let g:ale_cpp_gcc_options="-std=c++11 -Wall"
-let g:ale_cpp_clang_options=" -std=c++11 -Wall"
+" Display warning/errors in a separate buffer (default=0)
+let g:ale_open_list=1
+
+" Display warning/error buffer as vertical split (default=0)
+" let g:ale_list_vertical=0
+
+" Set size of warning/error buffer (default=10)
+ let g:ale_list_window_size=5
+
+" Keep left-hand sign gutter open permanently (default=0)
+" let g:ale_sign_column_always=0
+
+let g:ale_cpp_gcc_options="-I/opt/bb/include -std=c++11 -Wall"
+let g:ale_cpp_clang_options="-I/opt/bb/include -std=c++11 -Wall"
 let g:ale_cpp_clangd_options=""
 
 set omnifunc=ale#completion#OmniFunc
