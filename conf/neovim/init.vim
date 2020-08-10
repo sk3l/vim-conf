@@ -23,6 +23,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'fatih/vim-go'
 Plugin 'dense-analysis/ale'
+Plugin 'neovim/nvim-lsp'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -65,8 +66,6 @@ hi IncSearch cterm=bold ctermfg=darkred ctermbg=NONE
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=grey ctermbg=darkred
 
-set omnifunc=syntaxcomplete#Complete
-
 " Clipboard
 set clipboard+=unnamedplus
 
@@ -90,5 +89,18 @@ au BufNewFile *.html 0r ~/.vim/templates/skeleton.html
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Per-plugin configs
 "
+" Python Language Server settings
+"lua << EOF
+"    require'nvim_lsp'.pyls.setup{
+"    settings = {
+"        pyls = {
+"            configurationSources = {
+"                 "flake8"
+"            }
+"        }
+"    }
+"}
+"EOF
+
 source ~/.vim/conf/.vimrc_nerdtree
 source ~/.vim/conf/.vimrc_ale
