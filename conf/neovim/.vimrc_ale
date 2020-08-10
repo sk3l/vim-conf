@@ -1,5 +1,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALE
+
+" ~~ Note ~~ Following packages are assumed to be installed for ALE integration
+" C++ => gcc clang
+" Python => pylint flake8 jedi mypy black isort
+
 let g:ale_completion_enabled=1
 
 " Display warning/errors in a separate buffer (default=0)
@@ -16,8 +21,8 @@ let g:ale_open_list=1
 
 let g:go_gopls_enabled = 0 " Disable gopls in vim-go 
 
-let g:ale_cpp_gcc_options="-I/opt/bb/include -std=c++11 -Wall"
-let g:ale_cpp_clang_options="-I/opt/bb/include -std=c++11 -Wall"
+let g:ale_cpp_gcc_options="-std=c++11 -Wall"
+let g:ale_cpp_clang_options="-std=c++11 -Wall"
 
 " ALE clangd options can be used to point to alternate Clang install locations
 " let g:ale_cpp_clangd_options="--resource-dir=/opt/rh/llvm-toolset-9.0/root/usr/lib64/clang/9.0.1/"
