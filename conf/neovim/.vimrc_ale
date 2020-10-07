@@ -41,3 +41,11 @@ let b:ale_fixers = {
 \}
 let b:ale_fix_on_save = 1
 
+" ~!~!~! To enable linting of English prose in markdown, text etc ~!~!~!
+"
+" 1. Install Java JRE, LanguageTool (https://languagetool.org)
+" 2. Add line \"\   'markdown': ['languagetool']," to g:ale_linters above
+" 3. Uncomment following lines:
+"
+" let b:ale_languagetool_executable = 'java'
+" let g:ale_languagetool_options="-jar /home/mskelton8/Code/LanguageTool-5.2-SNAPSHOT/languagetool-commandline.jar -l en-US"
