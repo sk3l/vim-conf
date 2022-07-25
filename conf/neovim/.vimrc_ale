@@ -21,23 +21,25 @@ let g:ale_open_list=1
 
 let g:go_gopls_enabled = 0 " Disable gopls in vim-go 
 
-let g:ale_cpp_gcc_options="-std=c++11 -Wall"
-let g:ale_cpp_clang_options="-std=c++11 -Wall"
-
 " ALE clangd options can be used to point to alternate Clang install locations
 " let g:ale_cpp_clangd_options="--resource-dir=/opt/rh/llvm-toolset-9.0/root/usr/lib64/clang/9.0.1/"
 let g:ale_cpp_clangd_options=""
 
+" flake8
+let g:ale_python_flake8_options = '--max-line-length=100'
+
 set omnifunc=ale#completion#OmniFunc
 
 let g:ale_linters = {
-\   'cpp': ['clang', 'clangcheck', 'clangd', 'gcc'],
+\   'c': ['clang', 'clangcheck', 'clangd'],
+\   'cpp': ['clang', 'clangcheck', 'clangd'],
 \   'go': ['gopls'],
-\   'python': ['flake8', 'pylint', 'pyls', 'mypy'],
+\   'python': ['flake8', 'pylint', 'pylsp', 'mypy'],
 \}
 
-let b:ale_fixers = {
-\   'python': ['black', 'isort']
+let g:ale_fixers = {
+\   'python': ['black', 'isort'],
+\   'go': ['gofmt', 'goimports', 'golines'],
 \}
 let b:ale_fix_on_save = 1
 
