@@ -1,7 +1,0 @@
-autocmd BufWritePost *.py call flake8#Flake8()
-
-let g:flake8_show_in_gutter=1  " show
-let g:flake8_show_in_file=1  " show
-
-let g:flake8_error_marker='EE'     " set error marker to 'EE'
-let g:flake8_warning_marker='WW'   " set warning marker to 'WW'
