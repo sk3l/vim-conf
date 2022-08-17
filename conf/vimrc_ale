@@ -31,10 +31,12 @@ let g:ale_python_flake8_options = '--max-line-length=100'
 
 set omnifunc=ale#completion#OmniFunc
 
+" pylsp = python-lsp-server package
 let g:ale_linters = {
 \   'c': ['clang', 'clangcheck', 'clangd'],
 \   'cpp': ['clang', 'clangcheck', 'clangd'],
 \   'go': ['gopls'],
+\   'javascript': ['eslint'],
 \   'python': ['flake8', 'pylint', 'pylsp', 'mypy'],
 \   'sh' : ['bashate', 'cspell', 'language_server', 'shell', 'shellcheck']
 \}
@@ -42,6 +44,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'python': ['black', 'isort'],
 \   'go': ['gofmt', 'goimports', 'golines'],
+\   'javascript': ['prettier'],
 \}
 let b:ale_fix_on_save = 1
 
