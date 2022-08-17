@@ -4,6 +4,7 @@
 " ~~ Note ~~ Following packages are assumed to be installed for ALE integration
 " C++ => gcc clang
 " Python => python-language-server pylint flake8 jedi mypy black isort
+" Shell => bashate (pip), cspell (npm), shellcheck (apt)
 
 let g:ale_completion_enabled=1
 
@@ -35,6 +36,7 @@ let g:ale_linters = {
 \   'cpp': ['clang', 'clangcheck', 'clangd'],
 \   'go': ['gopls'],
 \   'python': ['flake8', 'pylint', 'pylsp', 'mypy'],
+\   'sh' : ['bashate', 'cspell', 'language_server', 'shell', 'shellcheck']
 \}
 
 let g:ale_fixers = {
