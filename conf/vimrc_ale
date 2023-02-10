@@ -20,11 +20,14 @@ let g:ale_open_list=1
 " Keep left-hand sign gutter open permanently (default=0)
 " let g:ale_sign_column_always=0
 
-let g:go_gopls_enabled = 0 " Disable gopls in vim-go 
+let g:go_gopls_enabled = 0 " Disable gopls in vim-go
 
 " ALE clangd options can be used to point to alternate Clang install locations
 " let g:ale_cpp_clangd_options="--resource-dir=/opt/rh/llvm-toolset-9.0/root/usr/lib64/clang/9.0.1/"
 let g:ale_cpp_clangd_options=""
+" SQL Format
+let g:ale_sql_sqlformat_executable="sqlformat"
+let g:ale_sql_sqlformat_options="-r"
 
 " flake8
 let g:ale_python_flake8_options = '--max-line-length=100'
@@ -42,9 +45,10 @@ let g:ale_linters = {
 \}
 
 let g:ale_fixers = {
-\   'python': ['black', 'isort'],
 \   'go': ['gofmt', 'goimports', 'golines'],
 \   'javascript': ['prettier'],
+\   'python': ['black', 'isort'],
+\   'sql': ['sqlformat'],
 \}
 let b:ale_fix_on_save = 1
 
