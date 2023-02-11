@@ -47,7 +47,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'go': ['gofmt', 'goimports', 'golines'],
 \   'javascript': ['prettier'],
-\   'json': ['fixjson']
+\   'json': ['fixjson'],
 \   'python': ['black', 'isort'],
 \   'sql': ['sqlformat'],
 \}
