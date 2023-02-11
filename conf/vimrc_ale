@@ -47,10 +47,13 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'go': ['gofmt', 'goimports', 'golines'],
 \   'javascript': ['prettier'],
+\   'json': ['fixjson']
 \   'python': ['black', 'isort'],
 \   'sql': ['sqlformat'],
 \}
 let b:ale_fix_on_save = 1
+
+let g:ale_json_fixjson_options = "--indent 4"
 
 " ~!~!~! To enable linting of English prose in markdown, text etc ~!~!~!
 "
