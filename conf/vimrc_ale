@@ -22,6 +22,11 @@ let g:ale_open_list=1
 
 let g:go_gopls_enabled = 0 " Disable gopls in vim-go
 
+" Need to enable this so that the linter runs at the _package_, not file
+" level. This avoids spurious typecheck errors from checking files in
+" isolation.
+let g:ale_go_golangci_lint_package = 1
+
 " ALE clangd options can be used to point to alternate Clang install locations
 " let g:ale_cpp_clangd_options="--resource-dir=/opt/rh/llvm-toolset-9.0/root/usr/lib64/clang/9.0.1/"
 let g:ale_cpp_clangd_options=""
@@ -38,7 +43,7 @@ set omnifunc=ale#completion#OmniFunc
 let g:ale_linters = {
 \   'c': ['clang', 'clangcheck', 'clangd'],
 \   'cpp': ['clang', 'clangcheck', 'clangd'],
-\   'go': ['gopls'],
+\   'go': ['gopls','govet','gobuild','golangci-lint'],
 \   'javascript': ['eslint'],
 \   'python': ['flake8', 'pylint', 'pylsp', 'mypy'],
 \   'sh' : ['bashate', 'cspell', 'language_server', 'shell', 'shellcheck']
