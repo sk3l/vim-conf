@@ -3,7 +3,7 @@
 
 " ~~ Note ~~ Following packages are assumed to be installed for ALE integration
 " C++ => gcc clang
-" Python => python-language-server pylint flake8 jedi mypy black isort
+" Python => python-lsp-server pylint flake8 jedi mypy black isort
 " Shell => bashate (pip), cspell (npm), shellcheck (apt)
 
 let g:ale_completion_enabled=1
