@@ -5,6 +5,7 @@
 " C++ => gcc clang
 " Python => python-lsp-server pylint flake8 jedi mypy black isort
 " Shell => bashate (pip), cspell (npm), shellcheck (apt)
+" HTML => prettier (npm), tidy (apt)
 
 let g:ale_completion_enabled=1
 
@@ -44,6 +45,7 @@ let g:ale_linters = {
 \   'c': ['clang', 'clangcheck', 'clangd'],
 \   'cpp': ['clang', 'clangcheck', 'clangd'],
 \   'go': ['gopls','govet','gobuild','golangci-lint'],
+\   'html': ['tidy'],
 \   'javascript': ['eslint'],
 \   'python': ['flake8', 'pylint', 'pylsp', 'mypy'],
 \   'sh' : ['bashate', 'cspell', 'language_server', 'shell', 'shellcheck']
@@ -51,6 +53,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
 \   'go': ['gofmt', 'goimports', 'golines'],
+\   'html': ['prettier'],
 \   'javascript': ['prettier'],
 \   'json': ['fixjson'],
 \   'python': ['black', 'isort'],
