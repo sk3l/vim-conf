@@ -2,10 +2,11 @@
 " ALE
 
 " ~~ Note ~~ Following packages are assumed to be installed for ALE integration
-" C++ => gcc clang
+" C++    => gcc clang clangd clangtidy
 " Python => python-lsp-server pylint flake8 jedi mypy black isort
-" Shell => bashate (pip), cspell (npm), shellcheck (apt)
-" HTML => prettier (npm), tidy (apt)
+" Shell  => bashate (pip), cspell (npm), shellcheck (apt)
+" HTML   => prettier (npm), tidy (apt)
+" YAML   => yamllint (pip)
 
 let g:ale_completion_enabled=1
 
@@ -48,7 +49,8 @@ let g:ale_linters = {
 \   'html': ['tidy'],
 \   'javascript': ['eslint'],
 \   'python': ['flake8', 'pylint', 'pylsp', 'mypy'],
-\   'sh' : ['bashate', 'cspell', 'language_server', 'shell', 'shellcheck']
+\   'sh' : ['bashate', 'cspell', 'language_server', 'shell', 'shellcheck'],
+\   'yaml' : ['yamllint']
 \}
 
 let g:ale_fixers = {
